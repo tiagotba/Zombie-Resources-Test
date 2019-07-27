@@ -9,6 +9,7 @@ namespace WebApiZombieResources.Models
     {
         public int Id { get; set; }
         public virtual Recursos Recurso { get; set; }
+        public virtual RecursoEntrada RecursoEntradas { get; set; }
         public string Lote { get; set; }
         public int Qtd { get; set; }
 

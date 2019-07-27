@@ -11,5 +11,6 @@ namespace WebApiZombieResources.Models
         public DateTime dataSaida { get; set; }
         public DateTime dataPedido { get; set; }
         public virtual Sobreviventes Sobrevivente { get; set; }
+        public virtual List<ItemRecursoSaida> ItemRecursoSaidas { get; set; }
     }
 }
