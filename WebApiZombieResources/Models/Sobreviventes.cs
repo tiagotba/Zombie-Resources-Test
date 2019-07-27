@@ -15,5 +15,6 @@ namespace WebApiZombieResources.Models
         public string LoginName { get; set; }
         public bool EAdmin { get; set; }
         public virtual List<RecursoEntrada> recursoEntradas { get; set; }
+        public virtual List<RecursoSaida> recursosSaidas { get; set; }
     }
 }

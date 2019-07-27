@@ -11,6 +11,7 @@ namespace WebApiZombieResources.Models
         public DateTime dataEntrada { get; set; }
         public DateTime dataPedido { get; set; }
         public double Total { get; set; }
+        public int SobreviventeID { get; set; }
         public virtual Sobreviventes Sobrevivente { get; set; }
         public virtual List<ItemRecursoEntrada> ItemRecursoEntradas { get; set; }
 
