@@ -7,7 +7,7 @@ using WebApiZombieResources.Models;
 
 namespace WebApiZombieResources.Repositories
 {
-    interface IRecursosRepository
+  public  interface IRecursosRepository
     {
         IEnumerable<Recursos> GetRecursos();
         Recursos GetRecursos(int id);
