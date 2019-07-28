@@ -118,6 +118,8 @@
     <Compile Include="Models\RecursoSaida.cs" />
     <Compile Include="Models\Sobreviventes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IRecursosRepository.cs" />
+    <Compile Include="Repositories\RecursoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
