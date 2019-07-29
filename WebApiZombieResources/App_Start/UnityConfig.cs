@@ -15,7 +15,10 @@ namespace WebApiZombieResources
             // it is NOT necessary to register your controllers
             
             container.RegisterType<IRecursosRepository, RecursoRepository>();
-            
+            container.RegisterType<IRecursoEntradaRepository, RecursoEntradaRepository>();
+            container.RegisterType<IRecursoSaidaRepository, RecursoSaidaRepository>();
+            container.RegisterType<ISobreviventeRepository, SobreviventeRepository>();
+
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
 

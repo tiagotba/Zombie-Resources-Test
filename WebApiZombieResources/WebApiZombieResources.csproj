@@ -145,6 +145,8 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Contexts\BD_Context.cs" />
+    <Compile Include="Controllers\RecursoEntradaController.cs" />
+    <Compile Include="Controllers\RecursoSaidaController.cs" />
     <Compile Include="Controllers\RecursosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -171,8 +173,14 @@
     <Compile Include="Models\RecursoSaida.cs" />
     <Compile Include="Models\Sobreviventes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IRecursoEntradaRepository.cs" />
+    <Compile Include="Repositories\IRecursoSaidaRepository.cs" />
     <Compile Include="Repositories\IRecursosRepository.cs" />
+    <Compile Include="Repositories\ISobreviventeRepository.cs" />
+    <Compile Include="Repositories\RecursoEntradaRepository.cs" />
     <Compile Include="Repositories\RecursoRepository.cs" />
+    <Compile Include="Repositories\RecursoSaidaRepository.cs" />
+    <Compile Include="Repositories\SobreviventeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
