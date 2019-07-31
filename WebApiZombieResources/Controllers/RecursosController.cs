@@ -9,6 +9,7 @@ using WebApiZombieResources.Repositories;
 
 namespace WebApiZombieResources.Controllers
 {
+    [System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*", exposedHeaders: "X-Custom-Header")]
     public class RecursosController : ApiController
     {
 
@@ -72,7 +73,7 @@ namespace WebApiZombieResources.Controllers
                 return NotFound();
             }
             recursosRepository.DeleRecurso(id);
-            return Ok();
+            return Ok(recursoExiste);
         }
 
     }

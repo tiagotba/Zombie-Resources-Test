@@ -17,6 +17,7 @@ namespace WebApiZombieResources.Repositories
 
         void IRecursosRepository.CreateRecurso(Recursos recursos)
         {
+            recursos.Status = true;
             context.Recursos.Add(recursos);
             context.SaveChanges();
         }
@@ -24,13 +25,14 @@ namespace WebApiZombieResources.Repositories
         void IRecursosRepository.DeleRecurso(int id)
         {
             Recursos recurso = context.Recursos.Find(id);
-            context.Entry(recurso).State = System.Data.Entity.EntityState.Deleted;
+            recurso.Status = false;
+            context.Set<Recursos>().AddOrUpdate(recurso);
             context.SaveChanges();
         }
 
         IEnumerable<Recursos> IRecursosRepository.GetRecursos()
         {
-            return context.Recursos.ToList();
+            return context.Recursos.ToList().Where(r=> r.Status);
         }
 
         Recursos IRecursosRepository.GetRecursos(int id)

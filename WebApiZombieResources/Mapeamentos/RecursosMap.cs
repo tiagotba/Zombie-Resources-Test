@@ -28,12 +28,16 @@ namespace WebApiZombieResources.Mapeamentos
             Property(x => x.Quantidade)
            .HasColumnName("QTD_ESTOQUE")
            .IsRequired();
-         
+
 
             Property(x => x.Observacao)
            .HasColumnName("OBS_OBSERVACAO")
            .IsRequired()
             .HasMaxLength(500);
+
+            Property(x => x.Status)
+        .HasColumnName("ST_STATUS")
+        .IsRequired();
 
         }
     }

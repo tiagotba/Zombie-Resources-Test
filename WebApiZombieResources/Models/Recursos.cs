@@ -11,6 +11,7 @@ namespace WebApiZombieResources.Models
         public string Descricao { get; set; }
         public int Quantidade { get; set; }
         public string Observacao { get; set; }
+        public bool Status { get; set; }
         public virtual List<ItemRecursoEntrada> ItemRecursoEntradas { get; set; }
         public virtual List<ItemRecursoSaida> ItemRecursoSaidas { get; set; }
     }
