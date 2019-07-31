@@ -13,9 +13,11 @@ import { RecursoService } from './services/recurso.service';
 import { MovimentosService } from './services/movimentos.service';
 import { UsuarioService } from './services/usuario.service';
 
-import { RecursosComponent } from './view components/recursos/recursos.component';
+import { RecursosComponent } from './recursos/recursos.component';
 import { UsuariosComponent } from './view components/usuarios/usuarios.component';
 import { MovimentosComponent } from './view components/movimentos/movimentos.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuardService } from './guards/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { MovimentosComponent } from './view components/movimentos/movimentos.com
     RecursosComponent,
     UsuariosComponent,
     MovimentosComponent,
+    LoginComponent,
     // DatePipe
   ],
   imports: [
@@ -35,7 +38,8 @@ import { MovimentosComponent } from './view components/movimentos/movimentos.com
   providers: [
     RecursoService,
     MovimentosService,
-    UsuarioService
+    UsuarioService,
+    AuthGuardService,
   ],
   bootstrap: [AppComponent]
 })

@@ -150,6 +150,7 @@
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Autenticacao\Senha.cs" />
     <Compile Include="Contexts\BD_Context.cs" />
     <Compile Include="Controllers\RecursoEntradaController.cs" />
     <Compile Include="Controllers\RecursoSaidaController.cs" />
