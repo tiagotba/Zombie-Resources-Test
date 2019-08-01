@@ -13,17 +13,17 @@ import { RecursoService } from './services/recurso.service';
 import { MovimentosService } from './services/movimentos.service';
 import { UsuarioService } from './services/usuario.service';
 
-import { RecursosComponent } from './recursos/recursos.component';
+ import { RecursosComponent } from './view components/recursos/recursos.component';
 import { UsuariosComponent } from './view components/usuarios/usuarios.component';
 import { MovimentosComponent } from './view components/movimentos/movimentos.component';
 import { LoginComponent } from './login/login.component';
-import { AuthGuardService } from './guards/auth-guard.service';
+// import { AuthGuardService } from './guards/auth-guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuNavBarComponent,
-    RecursosComponent,
+     RecursosComponent,
     UsuariosComponent,
     MovimentosComponent,
     LoginComponent,
@@ -38,8 +38,8 @@ import { AuthGuardService } from './guards/auth-guard.service';
   providers: [
     RecursoService,
     MovimentosService,
-    UsuarioService,
-    AuthGuardService,
+    UsuarioService
+    // AuthGuardService,
   ],
   bootstrap: [AppComponent]
 })

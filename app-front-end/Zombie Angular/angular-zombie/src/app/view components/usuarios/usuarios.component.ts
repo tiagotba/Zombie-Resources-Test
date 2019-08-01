@@ -3,6 +3,7 @@ import { Usuario } from '../../entities/Usuario';
 
 import { UsuarioService } from '../../services/usuario.service';
 
+
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -11,20 +12,21 @@ import { UsuarioService } from '../../services/usuario.service';
 export class UsuariosComponent implements OnInit {
   private Usuario: Usuario;
 
-  constructor(private usuarioService: UsuarioService) { 
+  constructor(private usuarioService: UsuarioService) {
     this.Usuario = new Usuario("", "");
   }
 
   ngOnInit() {
 
+
   }
 
   salvar(){
-    let user = this.Usuario;
-    this.Usuario = new Usuario("", "");
-    this.usuarioService.addUsuario(user)
-      .subscribe((value)=> alert("Usuário(a) \""+user.Nome+"\" registrado(a) com sucesso"),
-        error => this.erro(error));
+    // let user = this.Usuario;
+    // this.Usuario = new Usuario("", "");
+    // this.usuarioService.addUsuario(user)
+    //   .subscribe((value)=> alert("Usuário(a) \""+user.Nome+"\" registrado(a) com sucesso"),
+    //     error => this.erro(error));
   }
 
   erro(error){
@@ -38,7 +40,7 @@ export class UsuariosComponent implements OnInit {
         }
       }
     }catch(e){
-      msg = JSON.parse(error._body).Message 
+      msg = JSON.parse(error._body).Message
     }
     alert(msg)
   }

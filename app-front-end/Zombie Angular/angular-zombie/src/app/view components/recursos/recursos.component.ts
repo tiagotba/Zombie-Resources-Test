@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Recurso } from '../../entities/Recurso';
-
+import { Router } from '@angular/router';
 import { RecursoService } from '../../services/recurso.service';
+
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'app-recursos',
@@ -13,17 +15,24 @@ export class RecursosComponent implements OnInit {
   private isEditando: boolean = false;
   private Recursos: Recurso[];
   private Recurso: Recurso;
-
   private Filtro: String = "";
   private FiltroArray: boolean[] = [];
 
-  constructor(private recursoService: RecursoService) {
+  constructor(private recursoService: RecursoService,private router: Router) {
     console.log('RecursosComponent')
     this.Recurso = new Recurso('','','','');
    }
 
   ngOnInit() {
-    this.getRecursos();
+    if(environment.isAuttenticado)
+    {
+      this.getRecursos();
+    }
+    else
+    {
+      this.router.navigate(['login']);
+    }
+
   }
 
   getRecursos(){
@@ -43,17 +52,17 @@ export class RecursosComponent implements OnInit {
 
   adicionar(){
     if(!this.isAdicionando && !this.isEditando){
-      this.addMode();    
+      this.addMode();
     }else if(!this.isEditando){
       this.confirmAdicao();
     }else{
       this.confirmEdicao();
     }
   }
-  
+
   confirmAdicao(){
     let rec = this.Recurso;
-    
+
     this.recursoService.addRecurso(rec)
       .subscribe((response) => this.reload(response),
           error => this.erro(error));
@@ -65,7 +74,7 @@ export class RecursosComponent implements OnInit {
   }
 
   cancelEdit(){
-    this.Recurso = new Recurso('','','','');    
+    this.Recurso = new Recurso('','','','');
     this.isAdicionando = false;
     this.isEditando = false;
   }
@@ -81,7 +90,7 @@ export class RecursosComponent implements OnInit {
         }
       }
     }catch(e){
-      msg = JSON.parse(error._body).Message 
+      msg = JSON.parse(error._body).Message
     }
     alert(msg)
   }
@@ -102,7 +111,7 @@ export class RecursosComponent implements OnInit {
 
   confirmEdicao(){
     let rec = this.Recurso;
-    
+
     this.recursoService.editRecurso(rec)
       .subscribe((response) => this.reload(response),
           error => this.erro(error));

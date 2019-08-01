@@ -11,6 +11,8 @@ namespace WebApiZombieResources.Repositories
     {
         IEnumerable<Sobreviventes> GetSobreviventes();
         Sobreviventes GetSobreviventes(int id);
+        Sobreviventes GetByLogin(Sobreviventes sobrevivente);
+        IEnumerable<KeyValuePair<string, string>> Validar(Sobreviventes sobreviventes);
         void AddSobrevivente(Sobreviventes sobreviventes);
         void UpdateSobrevivente(Sobreviventes sobreviventes, int id);
         void DeleSobrevivente(int id);

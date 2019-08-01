@@ -155,6 +155,7 @@
     <Compile Include="Controllers\RecursoEntradaController.cs" />
     <Compile Include="Controllers\RecursoSaidaController.cs" />
     <Compile Include="Controllers\RecursosController.cs" />
+    <Compile Include="Controllers\SobreviventeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

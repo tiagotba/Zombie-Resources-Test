@@ -7,7 +7,7 @@ import { Usuario } from '../entities/Usuario';
 @Injectable()
 export class AuthService {
 
-  private usuarioAutenticado: boolean = false;
+   usuarioAutenticado: boolean = false;
 
   constructor(private router: Router) { }
 
@@ -26,7 +26,7 @@ export class AuthService {
     }
   }
 
-  usuarioEstaAutenticado(){
+ public usuarioEstaAutenticado(){
     return this.usuarioAutenticado;
   }
 
